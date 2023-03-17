@@ -1,5 +1,5 @@
 import random
-from math import cos, pi
+from math import cos, pi #интеграл cos(x) на отрезке [-pi/2; pi/2]
  
 def MonteCarlo( n ):
     pi_2 = pi / 2
