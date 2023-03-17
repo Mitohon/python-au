@@ -1,0 +1,17 @@
+import random
+from math import cos, pi
+ 
+def MonteCarlo( n ):
+    pi_2 = pi / 2
+    point_counter = 0
+    for _ in range( n ):
+        x = random.uniform( -pi_2, pi_2 )
+        y = random.uniform( 0, 1 )
+        if y <= cos( x ):
+            point_counter += 1
+    return pi * point_counter / n    
+    
+N = 1000 #тест
+for n in range( 100, N, 100 ):
+    MC = MonteCarlo( n )
+    print( "n =", n, " ",  MC, "\t", abs( MC - 2 ) )
