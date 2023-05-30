@@ -26,8 +26,6 @@ def reproduce(offsprings):
         new_off.append(member2)
     return new_off
 
-
-# различие строк
 def match(member, str):
     i = len(str)-1
     differences = 0
@@ -36,15 +34,11 @@ def match(member, str):
             differences += 1
     return differences
 
-
-# сортировка по важности
 def select(offsprings, str):
     survival_value = map(lambda x: (match(x, str), x), offsprings)
     selection = list(map(lambda xy: xy[1], sorted(survival_value)[:len(offsprings)]))
     return selection
 
-
-# заменяем рандомный эелемент строки на рандомный символ
 def mutation(offspring):
     mut_count = random.randint(0, len(offspring)-1)
     temp = list(offspring)
@@ -52,21 +46,17 @@ def mutation(offspring):
     offspring = "".join(temp)
     return offspring
 
-
-# мутация всех потомков
 def mutations(offsprings):
     new_generation = []
     for member in offsprings:
         new_generation.append(mutation(member))
     return new_generation
 
-
 def survival(offsprings, str):
     off = select(offsprings, str)
     if len(off) > 8:
         return off[:int(len(off)/4)]
     return off
-
 
 def the_evolution_of_a_string():
     str = input()
