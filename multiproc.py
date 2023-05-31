@@ -1,5 +1,5 @@
-import multiprocess as mp
-from multiprocess import Pool
+import multiprocessing as mp
+from multiprocessing import Pool
 import time
 import random
 from math import cos, pi  # интеграл cos(x) на отрезке [-pi/2; pi/2]
